@@ -10,8 +10,7 @@
          url('../assets/fonts/lato-v16-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../assets/fonts/lato-v16-latin-300.svg#Lato') format('svg'); /* Legacy iOS */
   }
-  
-  /* lato-regular - latin */
+    
   @font-face {
     font-family: 'Lato Regular';
     font-style: normal;

@@ -22,13 +22,15 @@ header {
 
 h1 {
     padding-left: 40px;
-    font-size: 25px;
-    line-height: 18px;
     margin: 0px;
     padding-top: 34px;
     padding-bottom: 37px; 
     border-bottom: 6px solid #323746;
-    letter-spacing: -0.35px;          
+    font-family: "Lato Bold", "Open Sans", sans-serif;
+    font-size: 25px;
+    line-height: 18px;
+    letter-spacing: -0.35px;
+    font-stretch: ultra-condensed;            
 }
 
 
@@ -38,20 +40,24 @@ h1 {
 
 .topnav {
     /*width: 390px;*/
-    padding-right: 27px;    
+    padding-right: 26px;
+    font-family: "Lato Bold", "Open Sans", sans-serif;
+    line-height: 9px;
+    font-stretch: ultra-condensed
+      
 }
 
 ul {
     display: flex;
-    justify-content: space-between;           
+    justify-content: space-between; 
+    letter-spacing: -0.1px;            
 }
  
 li {
     list-style-type: none;
     padding-right: 13px;
     padding-top: 3px;
-    line-height: 9px;
-    font-stretch: ultra-condensed
+    letter-spacing: -0.1px;    
 }
 
 li:before {
@@ -60,9 +66,10 @@ li:before {
     padding-right: 13px;
 }
 
-
-   /*color: #f06c64;*/
-
+li:hover {
+    color: #f06c64;
+    cursor: pointer;
+}
 
 .slider {
     background-color: #f06c64;
@@ -91,6 +98,12 @@ li:before {
 
 .switch-right {
     padding: 0px 29px 5px 0px;
+}
+
+.button_img:hover {
+    filter: grayscale(80%);
+    -webkit-filter: grayscale(80%);      
+    cursor: pointer;
 }
 
 .services {
@@ -196,8 +209,7 @@ p {
 }
 
 .service_text {
-    margin: 0px;
-    /* color: #020202;*/
+    margin: 0px;    
     width: 219px;
     height: 123px;
     padding: 0px 10px 0px 10px;

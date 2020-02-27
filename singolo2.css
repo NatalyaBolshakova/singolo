@@ -49,8 +49,7 @@ h2 {
     text-align: justify;    
 }
 
-.introduction_portfolio {
-    
+.introduction_portfolio {    
     height: 30px;
     padding: 25px 10px 0px 10px;
     text-align: justify;
@@ -58,6 +57,7 @@ h2 {
 
 button {
     margin: 11px 0px 0px 10px;
+   /* padding: 0px 6px 6px 6px;*/
     height: 22px;
     border-radius: 5px;
     background-color: #2d303a;
@@ -66,25 +66,46 @@ button {
     line-height: 22px;
     color: #767e9e;
     font-family: "Lato Regular", "Open Sans", sans-serif;
-    text-align: left;
-    
-    
+    text-align: left;    
 }
-/*.slider_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 594px;
-}*/
 
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around; 
-
+    justify-content: space-around;
+    align-content: space-around;
 }
+
+.container_button {
+    display: inline-flex;
+    /*flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-around;*/
+}
+
+.container_portfolio {
+    height: 621px;
+    margin-top: 9px;
+}
+
+.container_staff {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+   
+}
+
+/*.container_media {
+    justify-content: lefts;
+}*/
+
+/*.item_staff {
+    flex-grow: 1;
+}*/
+
 
 h3 {
     margin: 0px;
@@ -100,8 +121,22 @@ p {
     margin: 0px;
 }
 
+.text {
+    font-family: "Lato Regular", "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #767e9e;
+    letter-spacing: -0.35px;
+    text-align: justify;
+    letter-spacing: -0.1px;
+}
 
-
+/*width: 300px;
+height: 175px;
+font-size: 12px;
+line-height: 22px;
+text-align: left;*/
 /*
 
 
@@ -233,13 +268,4 @@ li:hover {
     padding: 0px 10px 0px 10px;
 }
 
-.text {
-    font-family: "Lato Regular", "Open Sans", sans-serif;
-    font-size: 12px;
-    line-height: 21px;
-    font-weight: 400;
-    color: #767e9e;
-    letter-spacing: -0.35px;
-    text-align: justify;
-    letter-spacing: -0.1px;
-}*/
+*/

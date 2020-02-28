@@ -34,10 +34,7 @@ h2 {
     font-family: "Lato Black", "Open Sans", sans-serif;
     color: #666d89;
     line-height: 21px;
-    letter-spacing: -0.22px;
-
-    
-   
+    letter-spacing: -0.22px;   
 }
 
 .introduction {
@@ -74,6 +71,13 @@ button {
     color: #767e9e;
     font-family: "Lato Regular", "Open Sans", sans-serif;
     text-align: left;    
+}
+
+button:hover {
+    color:  #c5c5c5;
+    cursor: pointer;
+    background-color: #332f44;
+    border: 1px solid #c5c5c5;           
 }
 
 .container {
@@ -174,6 +178,11 @@ p {
     border: 1px solid #666d89;
 }
 
+.media_round:hover {
+    cursor: pointer;
+    background-color: #332f44;                   
+}
+
 .round_facebook {
     margin: 14px 0px 0px 11px;
 }
@@ -214,33 +223,4 @@ p {
        
 }
 
-
-/*
-
-background-color: #eb5055;
-border: 1px solid #666d89;
-
-.color-primary {
-    color: #f06c64;
-}
-
-
-
-li:before {
-    color: #494e62;
-    content: "·";
-    padding-right: 13px;
-}
-
-li:hover {
-    color: #f06c64;
-    cursor: pointer;
-}
-
-.button_img:hover {
-    filter: grayscale(80%);
-    -webkit-filter: grayscale(80%);      
-    cursor: pointer;
-}
-*/
 

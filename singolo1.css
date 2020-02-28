@@ -106,10 +106,13 @@ li:hover {
     cursor: pointer;
 }
 
-.services {
+.section2 {
     background-color: #f2f2f2;
-    height: 494px;
     border-bottom: 6px solid #ffffff;
+}
+
+.section2_services {
+    height: 494px;
     width: 960px;
     padding: 0px 30px;
 }
@@ -141,7 +144,8 @@ h2 {
     line-height: 30px;
     font-weight: 300;
     color: #767e9e;
-    text-align: justify;    
+    text-align: justify;
+    overflow: hidden;    
 }
 
 h3 {
@@ -216,12 +220,14 @@ p {
 }
 
 .text {
+    height: 90px; 
     font-family: "Lato Regular", "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 21px;
     font-weight: 400;
     color: #767e9e;
-    letter-spacing: -0.35px;
     text-align: justify;
     letter-spacing: -0.1px;
+    overflow: auto;
+    
 }

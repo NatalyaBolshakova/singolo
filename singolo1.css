@@ -144,7 +144,8 @@ h2 {
     line-height: 30px;
     font-weight: 300;
     color: #767e9e;
-    text-align: justify;    
+    text-align: justify;
+    overflow: auto;    
 }
 
 h3 {
@@ -219,6 +220,7 @@ p {
 }
 
 .text {
+    height: 90px; 
     font-family: "Lato Regular", "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 21px;
@@ -226,4 +228,6 @@ p {
     color: #767e9e;
     text-align: justify;
     letter-spacing: -0.1px;
+    overflow: auto;
+    
 }

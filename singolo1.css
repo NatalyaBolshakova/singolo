@@ -145,7 +145,7 @@ h2 {
     font-weight: 300;
     color: #767e9e;
     text-align: justify;
-    overflow: auto;    
+    overflow: hidden;    
 }
 
 h3 {

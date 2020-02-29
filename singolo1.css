@@ -77,27 +77,33 @@ li:hover {
     border-bottom: 6px solid #ea676b;
 }
 
-.slider_container {
+.container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    height: 594px;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.slider_container {    
+    height: inherit;
 }
 
 .switch-left {
-    padding: 0px 0px 5px 32px;
+    padding: 0px 0px 5px 17px;
 }
 
 .phone_vertical {
-    padding: 0px 20px 5px 0px;
+    padding: 0px 20px 5px 3px;
 }
 
 .phone_horizontal {
-    padding: 0px 8px 5px 0px;
+    padding: 0px 4px 6px 2px;
 }
 
 .switch-right {
-    padding: 0px 29px 5px 0px;
+    padding: 0px 14px 5px 0px;
 }
 
 .button_img:hover {
@@ -115,15 +121,6 @@ li:hover {
     height: 494px;
     width: 960px;
     padding: 0px 30px;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between; 
-
 }
 
 h2 {
@@ -198,17 +195,17 @@ p {
 }
 
 #phone {
-    padding-top: 12px;
+    padding-top: 10px;
     padding-left: 2px;
 }
 
 #support {
-    padding-top: 12px;
-    padding-left: 1px;
+    padding-top: 13px;
+    padding-left: 2px;
 }
 
 #star {
-    padding-top: 12px;
+    padding-top: 11px;
     padding-left: 1px;
 }
 

@@ -218,22 +218,22 @@ p {
     margin: 14px 0px 0px 10px;
 }
 
-#facebook {    
+.facebook {    
    padding: 8px 0px 0px 11px; 
       
 }
 
-#google {    
+.google {    
     padding: 8px 0px 0px 8px; 
        
 }
 
- #twitter {    
+.twitter {    
     padding: 9px 0px 0px 7px; 
        
 }
 
- #linkedin {    
+.linkedin {    
     padding: 8px 0px 0px 8px; 
        
 }

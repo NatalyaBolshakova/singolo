@@ -74,12 +74,6 @@ button {
     text-align: left;    
 }
 
-.button_all {
-    color:  #c5c5c5;
-    background-color: #332f44;
-    border: 1px solid #c5c5c5;
-}
-
 .button_web {
     margin: 11px 0px 0px 10px;
     padding: 1px 5px 1px 7px;
@@ -96,11 +90,13 @@ button:hover {
     background-color: #332f44;
     border: 1px solid #c5c5c5;           
 }
-.button_all:hover {
-    background-color: #2d303a;
-    border: 1px solid #666d89;    
-    color: #767e9e;
-    cursor: pointer;
+
+button:focus,
+button:active {
+    outline:  #c5c5c5;
+    color:  #c5c5c5;
+    background-color: #332f44;
+    border: 1px solid #c5c5c5;
 }
 
 .container {
@@ -218,22 +214,22 @@ p {
     margin: 14px 0px 0px 10px;
 }
 
-#facebook {    
+.facebook {    
    padding: 8px 0px 0px 11px; 
       
 }
 
-#google {    
+.google {    
     padding: 8px 0px 0px 8px; 
        
 }
 
- #twitter {    
+.twitter {    
     padding: 9px 0px 0px 7px; 
        
 }
 
- #linkedin {    
+.linkedin {    
     padding: 8px 0px 0px 8px; 
        
 }

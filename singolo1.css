@@ -75,6 +75,11 @@ a {
     color: inherit;     
 }
 
+li>a:focus,
+li>a:active {    
+    color:#f06c64;    
+}
+
 .slider {
     background-color: #f06c64;
     height: 594px;

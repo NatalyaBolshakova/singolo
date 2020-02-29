@@ -38,26 +38,25 @@ h1 {
     color: #f06c64;
 }
 
+
 .topnav {
     /*width: 390px;*/
     padding-right: 26px;
     font-family: "Lato Bold", "Open Sans", sans-serif;
-    line-height: 9px;
-    font-stretch: ultra-condensed
-      
+    line-height: 6px;
+    font-stretch: ultra-condensed      
 }
 
 ul {
     display: flex;
-    justify-content: space-between; 
-    letter-spacing: -0.1px;            
+    justify-content: space-between;                   
 }
  
 li {
     list-style-type: none;
     padding-right: 13px;
     padding-top: 3px;
-    letter-spacing: -0.1px;    
+    letter-spacing: -0.29px;    
 }
 
 li:before {
@@ -69,6 +68,11 @@ li:before {
 li:hover {
     color: #f06c64;
     cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;     
 }
 
 .slider {

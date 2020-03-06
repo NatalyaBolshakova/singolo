@@ -36,7 +36,7 @@ a {
 .section1_contact {
     height: 648px;
     width: 960px;
-    padding: 0px 30px;
+    padding: 0px 30px;    
 }
 
 h2 {
@@ -49,9 +49,9 @@ h2 {
     letter-spacing: -0.22px;
 }
 
-.section1_contact>h2 {
-    /*line-height: 18px;*/
+.section1_contact>h2 {    
     color: #f0d8d9;
+    
 }
 
 .introduction {
@@ -81,6 +81,35 @@ h3 {
     color: #666d89;
     letter-spacing: -0.15px;
 }
+
+form {
+    width: calc(100%/3*2);
+}
+
+.container_form_element {
+    width: 100%;
+    margin: 0 10px;
+}
+
+.container_contact {
+    width: calc(100%/3);
+    justify-content: left;   
+}
+
+.container_contact>h3 {
+    color: #f0d8d9;
+    margin: 0 10px;    
+}
+
+/*.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-around;
+}*/
+
 p {
     margin: 0px;
 }
@@ -97,6 +126,28 @@ p {
     overflow: auto;
     
 }
+
+.container_contact>.text {
+    color: #f0d8d9;
+    margin: 0 10px;
+    /*width: 300px;
+    height: 175px;
+    line-height: 22px;*/
+}
+
+.container_contact>a>.text {
+    color: #f0d8d9;
+    margin: 0 10px;
+    /*width: 300px;
+    height: 175px;
+    line-height: 22px;*/
+}
+
+.container_contact>a {
+    width: 100%;
+    margin: 0 10px;
+}
+
 .container_footer {
     width: 960px;
     padding: 0px 30px;

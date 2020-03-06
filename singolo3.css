@@ -51,6 +51,7 @@ h2 {
 
 .section1_contact>h2 {    
     color: #f0d8d9;
+    padding-top: 67px;
     
 }
 
@@ -69,6 +70,7 @@ h2 {
 
 .section1_contact>.introduction {
     color: #f0d8d9;
+    padding-bottom: 47px;
 }
 
 h3 {
@@ -88,27 +90,36 @@ form {
 
 .container_form_element {
     width: 100%;
-    margin: 0 10px;
+    height: 38px;
+    margin: 0px 11px 16px 10px;
+    padding: 0 15px;
+    background-color: #d6564f;
+    font-family: "Lato Regular", "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    color: #f48c8f;
+    border-radius: 5px;
+    border: #d6564f;
+}
+
+.form_textarea {
+    height: 195px;
+    padding-top: 7px;
+    resize: none;
 }
 
 .container_contact {
     width: calc(100%/3);
     justify-content: left;   
+    align-self: flex-start ;
+    
 }
 
 .container_contact>h3 {
     color: #f0d8d9;
-    margin: 0 10px;    
+    margin: 0 10px;
+    letter-spacing: -0.13px;    
 }
-
-/*.container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    align-content: space-around;
-}*/
 
 p {
     margin: 0px;
@@ -129,24 +140,51 @@ p {
 
 .container_contact>.text {
     color: #f0d8d9;
-    margin: 0 10px;
+    margin: 0 10px 18px 10px;
+    line-height: 22px;
+    letter-spacing: -0.22px
     /*width: 300px;
     height: 175px;
     line-height: 22px;*/
 }
 
-.container_contact>a>.text {
+.contact {    
+    margin: 0 10px;
+    line-height: 21px;
+    letter-spacing: -0.1px
+    
+}
+
+.location {
+    margin: 1px 0px 0px 3px;
+}
+
+.text_contact {
     color: #f0d8d9;
     margin: 0 10px;
-    /*width: 300px;
-    height: 175px;
-    line-height: 22px;*/
+    font-family: "Lato Regular", "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 21px;   
+    letter-spacing: 0px;
+
 }
 
-.container_contact>a {
-    width: 100%;
-    margin: 0 10px;
+.text_location {
+    margin: 0px 0px 3px 11px;
 }
+
+#phone_cont {
+    margin-left: 1px;
+}
+
+.text_phone {
+    margin: 0px 0px 3px 9px;
+}
+
+#mail_cont {
+    margin-top: px;
+}
+
 
 .container_footer {
     width: 960px;

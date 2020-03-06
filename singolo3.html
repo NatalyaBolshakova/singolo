@@ -13,28 +13,30 @@
             <h2 id="services">Get a Quote</h2>
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="container">
-                <form action="#" method="post" class="container container_form">
-                    <input class="container_form_element" type="text" id="client_name" name="name" value="Name (Required)">
-                    <input class="container_form_element" type="email" id="client_mail" name="mail" value="Email (Required)">
-                    <input class="container_form_element" type="text" id="client_subject" name="subject" value="Subject">
-                    <textarea class="container_form_element" name="details" id="client_details" cols="30" rows="10">Describe your project in detail...</textarea>
-                    <input type="submit" id="bottom_submit" name="submit" value="Submit">
+                <form action="#" method="post" class="container">
+                    <input class="container_form_element" type="text" id="client_name" name="name" placeholder="Name (Required)" required>
+                    <input class="container_form_element" type="email" id="client_mail" name="mail" placeholder="Email (Required)" required>
+                    <input class="container_form_element" type="text" id="client_subject" name="subject" placeholder="Subject">
+                    <textarea class="container_form_element form_textarea" name="details" id="client_details" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+                    <input class="container_form_element" type="submit" id="bottom_submit" name="submit" value="Submit">
                 </form>
                 <div class="container container_contact">
                     <h3>Contact Information</h3>
                     <p class ="text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
-                    <a href="#">
-                        <img src="assets/img/location.svg" alt="location" width="7">
-                        <p class ="text">Elm St. 14/05 Lost City</p>
-                    </a> 
-                    <a href="#">
-                        <img src="assets/img/phonecontact.svg" alt="phonecontact" width="11">
-                        <p class ="text">03528 331 86 35</p>
-                    </a>
-                    <a href="#">
-                        <img src="assets/img/mail.svg" alt="mail" width="13">
-                        <p class ="text">info@singolo.com</p>
-                    </a>
+                    <div class="contact">
+                        <div class="location">                        
+                            <img src="assets/img/location.svg" alt="loc" width="7">
+                            <span class ="text_contact text_location"><a href="#">Elm St. 14/05 Lost City</a></span>
+                        </div>
+                        <div>                       
+                            <img id="phone_cont" src="assets/img/phonecontact.svg" alt="phonecontact" width="11">
+                            <span class ="text_contact text_phone"><a href="#">03528 331 86 35</a></span>                        
+                        </div>
+                        <div>                        
+                            <img src="assets/img/mail.svg" alt="mail" width="13">
+                            <span class ="text_contact"><a href="#">info@singolo.com</a></span>
+                        </div>
+                    </div>
                 </div>               
             </div>            
         </section>
@@ -46,13 +48,13 @@
                         <a href="#"><img class="facebook" src="assets/img/facebook.svg" alt="facebook" width="8"></a>
                     </div> 
                     <div class="media_round round_google">
-                        <a href="#"></a><img class="google" src="assets/img/google.svg" alt="google" width="14"></a>
+                        <a href="#"><img class="google" src="assets/img/google.svg" alt="google" width="14"></a>
                     </div>
                     <div class="media_round round_twitter">
-                        <a href="#"></a><img class="twitter" src="assets/img/twitter.svg" alt="twitter" width="15"></a>
+                        <a href="#"><img class="twitter" src="assets/img/twitter.svg" alt="twitter" width="15"></a>
                     </div>
                     <div class="media_round round_linkedin" >
-                        <a href="#"></a><img class="linkedin" src="assets/img/linkedin.svg" alt="linkedin" width="14"></a>
+                        <a href="#"><img class="linkedin" src="assets/img/linkedin.svg" alt="linkedin" width="14"></a>
                     </div>
             </div>
     </div>                    

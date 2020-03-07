@@ -100,6 +100,7 @@ form {
     color: #f48c8f;
     border-radius: 5px;
     border: #d6564f;
+    box-shadow:none;
 }
 
 .form_textarea {
@@ -122,11 +123,42 @@ form {
     color: #f48c8f;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-animation: autofill 0s forwards;
+}
+
+@-webkit-keyframes autofill {
+    100% {
+      background-color: #d6564f;
+      color: #f48c8f;
+    }
+  }
+
+  input:-webkit-autofill:invalid {
+    -webkit-animation: autofillinvalid 0s forwards;
+  }
+
+@-webkit-keyframes autofillinvalid {
+    100% {
+        background-color:#f0d8d9;
+        color: #d6564f;
+    }
+  }
+  
+
+.container_form_element:invalid:not(:placeholder-shown) {
+    background-color:#f0d8d9;
+    color: #d6564f;
+}
+
+
 .container_contact {
     width: calc(100%/3);
     justify-content: left;   
-    align-self: flex-start ;
-    
+    align-self: flex-start;    
 }
 
 .container_contact>h3 {

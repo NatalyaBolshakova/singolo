@@ -106,14 +106,20 @@ form {
 .form_textarea {
     height: 195px;
     padding-top: 7px;
-    resize: none;
+    resize: none;    
 }
 
 .container_form_element::-webkit-input-placeholder {
     font-family: "Lato Regular", "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 22px;
-    color: #f48c8f;
+    color: #f48c8f;    
+    transform: translate(-1px, -1px);
+}
+
+.form_textarea::-webkit-input-placeholder {
+    transform: translate(0px, 0px);
+    text-indent: -1px;
 }
 
 .container_form_element:-moz-placeholder {
@@ -121,6 +127,11 @@ form {
     font-size: 12px;
     line-height: 22px;
     color: #f48c8f;
+}
+
+.form_textarea::-moz-placeholder {
+    transform: translate(0px, 0px);
+    text-indent: -1px;
 }
 
 input:-webkit-autofill,

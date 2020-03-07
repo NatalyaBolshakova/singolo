@@ -108,6 +108,20 @@ form {
     resize: none;
 }
 
+.container_form_element::-webkit-input-placeholder {
+    font-family: "Lato Regular", "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    color: #f48c8f;
+}
+
+.container_form_element:-moz-placeholder {
+    font-family: "Lato Regular", "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    color: #f48c8f;
+}
+
 .container_contact {
     width: calc(100%/3);
     justify-content: left;   

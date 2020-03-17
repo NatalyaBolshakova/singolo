@@ -354,13 +354,18 @@ button:hover {
     border: 1px solid #c5c5c5;           
 }
 
-button:focus,
-button:active {
+.button_active {
     outline:  #c5c5c5;
     color:  #c5c5c5;
     background-color: #332f44;
     border: 1px solid #c5c5c5;
 }
+
+.img_active {
+    border: 5px solid #F06C64;
+    margin: -5px;
+}
+
 
 #photo1 {
     padding-left: 1px;

@@ -77,7 +77,8 @@ li:before {
     padding-right: 13px;
 }
 
-li:hover {
+
+li>a:hover {
     color: #f06c64;
     cursor: pointer;
 }
@@ -87,9 +88,9 @@ a {
     color: inherit;     
 }
 
-li>a:focus,
-li>a:active {    
-    color:#f06c64;    
+.active_li {    
+    color:#f06c64;
+       
 }
 
 .container {

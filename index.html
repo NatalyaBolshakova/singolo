@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">    
 </head>
 <body>    
-    <header class="header">
-            <h1>singolo<span class="color-primary">*</span></h1>
+    <header class="header" id="home">
+        <h1>singolo<span class="color-primary">*</span></h1>
             <nav class="topnav">
                 <ul>
                     <li class= "active_li">
@@ -30,30 +30,47 @@
                 </ul>
             </nav>       
     </header>
-    <hr id="home" class ="hr_header">
+    <!--<hr id="home" class ="hr_header">-->
     <main>
-        <section class="section1 section1_slider">
-            <div class=" container slider_container">
+        <div class="container_section1">
+            <section class="section1 section1_slider">
+                <div class="container slider_container">
+                    <div class="switch-left">
+                        <nav class="button_img">               
+                            <a href="#"><img src="assets/img/arrow-left.svg" alt="switch-left"></a>            
+                        </nav>
+                    </div>
+                    <div class="phone_vertical">
+                        <img src="assets/img/iPhone Vertical.png" alt="phone1">
+                    </div>
+                    <div class="phone_horizontal">
+                        <img src="assets/img/iPhone Horizontal.png" alt="phone2">
+                    </div>
+                    <div class="switch-right">
+                        <nav class="button_img">
+                            <a href="#"><img src="assets/img/arrow-right.svg" alt="switch-right"></a>                        
+                        </nav>
+                    </div>                
+                </div>
+                            
+            </section>
+            <section class ="section1_slider2">
                 <div class="switch-left">
                     <nav class="button_img">               
-                        <a href="#"><img src="assets/img/chev 2.svg" alt="switch-left"></a>            
+                        <a href="#"><img src="assets/img/arrow-left.svg" alt="switch-left"></a>            
                     </nav>
-                </div>
-                <div class="phone_vertical">
-                    <img src="assets/img/iPhone Vertical.png" alt="phone1">
-                </div>
-                <div class="phone_horizontal">
-                    <img src="assets/img/iPhone Horizontal.png" alt="phone2">
                 </div>
                 <div class="switch-right">
                     <nav class="button_img">
-                        <a href="#"><img src="assets/img/chev.svg" alt="switch-right"></a>                        
+                        <a href="#"><img src="assets/img/arrow-right.svg" alt="switch-right"></a>                        
                     </nav>
-                </div>                
-            </div>            
-        </section>
-        <hr id="services" class ="hr_section1">
-        <section class="section2 section2_services">
+                </div>
+                
+            </section>
+            
+        </div>
+        <!--<hr id="services" class ="hr_section1">-->
+        <section id="services" class="section2 section2_services">
             <h2 >Our Services</h2>
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
                  non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
@@ -103,8 +120,8 @@
                 </div>
             </div>         
         </section>
-        <hr id="portfolio" class ="hr_section2">
-        <section  class="portfolio">
+        <!--<hr id="portfolio" class ="hr_section2">-->
+        <section id="portfolio" class="portfolio">
             <h2>Portfolio</h2>
             <p class="introduction introduction_portfolio">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
             <nav class="container_button">
@@ -132,8 +149,8 @@
                 <img src="assets/img/image12.png" alt="image16.png">
             </div>                
         </section>
-        <hr id="about" class ="hr_header">
-        <section class="section2 section2_staff">
+        <!--<hr id="about" class ="hr_header">-->
+        <section id="about" class="section2 section2_staff">
             <h2>About Us</h2>
             <p class="introduction introduction_staff">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus,
@@ -207,7 +224,7 @@
                 </div>
             </div>                        
         </section>
-        <hr id="contact" class ="hr_section2">
+        <!--<hr id="contact" class ="hr_section2">-->
         <section id="contact" class="section1 section1_contact">
             <h2>Get a Quote</h2>
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -247,7 +264,7 @@
                 </div>               
             </div>            
         </section>
-        <hr class ="hr_section1">        
+        <!--<hr class ="hr_section1">  -->      
     </main>
     <footer>
         <div class="container container_footer">

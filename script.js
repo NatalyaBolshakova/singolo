@@ -19,7 +19,7 @@ const selectButton = (event) => {
     step++;
     // click - change the active portfolio button and image rotation position
     
-   if (/*event.target.classList[1] != 'button_active' & */event.target.tagName === 'BUTTON') {
+   if (event.target.classList[1] != 'button_active' & event.target.tagName === 'BUTTON') {
         document.querySelectorAll('.container_button>button').forEach(button => button.classList.remove('button_active'));
         event.target.classList.add('button_active');
 

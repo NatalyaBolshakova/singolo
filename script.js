@@ -3,13 +3,45 @@ const btnNav = document.querySelector("body > main > section.portfolio > .contai
 let Picture = document.querySelector("body > main > section.portfolio > .container_portfolio");
 const form = document.forms[0];
 
-const Ok_button = document.getElementById ("Ok_button");
+//const Ok_button = document.getElementById ("Ok_button");
 const elmName = document.getElementById('client_name');
 const elmMail = document.getElementById('client_mail');
 let resultValueSubject = '';
 let resultValueDetails = '';
 
 let step = 0;
+const slider = document.querySelector("body > main > div")
+
+//slider without click button
+let counter = 0;
+let interval_left = setInterval(function(){
+    counter -= 10;
+    document.querySelectorAll('.slider').forEach((item) => {
+        
+       
+        if (item.style.left === '-1020px'){
+            clearInterval(interval_left);
+            return;
+        }
+         
+        item.style.left = `${counter}px`;
+
+        })
+    }, 50);
+
+    //slider.addEventListener('click')
+
+/*let interval_right = setInterval(function(){
+    document.querySelectorAll('.item').forEach((item) => {
+        counter += 1;
+        item.style.left = `${counter}px`;
+        if (item.style.left === '0px'){
+            clearInterval(interval_right);
+            return;
+        }
+            
+        })
+    }, 100);*/
 
 
 // click - change active links of header

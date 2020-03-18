@@ -301,6 +301,10 @@ p {
     overflow: auto;    
 }
 
+.text::-webkit-scrollbar {
+    width: 12px;
+}
+
 .introduction_portfolio {    
     height: 30px;
     padding: 25px 10px 0px 10px;
@@ -467,12 +471,19 @@ form {
     border-radius: 5px;
     border: #d6564f;
     box-shadow:none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
 
 .form_textarea {
     height: 195px;
     padding-top: 7px;
-    resize: none;    
+    resize: none;
+    text-align: justify;
+    white-space: normal;
+    overflow: unset;
+    text-overflow: unset;    
 }
 
 .container_form_element::-webkit-input-placeholder {
@@ -499,6 +510,11 @@ form {
     transform: translate(0px, 0px);    
 }
 
+.form_textarea::-webkit-scrollbar {
+    width: 12px;
+}
+
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -524,12 +540,73 @@ input:-webkit-autofill:invalid {
     }
 }
   
-
 .container_form_element:invalid:not(:placeholder-shown) {
     background-color:#f0d8d9;
     color: #d6564f;
 }
 
+#message_box {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background:#f2f2f2;         
+}
+
+#message_box.hidden {
+    display: none;
+}
+
+#message {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: calc(100vw/2);
+    height: calc(100vh/3);    
+    padding: 40px;
+    margin: 10px;
+    background :#2d303a;
+    border: 2px solid #d6564f;
+    color: #767e9e;
+    text-align: left;
+   /* font-family: "Lato Bold", "Open Sans", sans-serif;*/
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 5px;
+    text-align: justify;
+    
+    
+}
+
+#subject_text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#details_text {
+    overflow: auto;
+    height: calc(100vh/6);
+    text-align: justify;
+}
+
+#details_text::-webkit-scrollbar {
+    width: 12px;
+}
+
+
+#Ok_button {
+    position: absolute; 
+    left: 80%;
+    top: 80%;
+    /*font-family: "Lato Bold", "Open Sans", sans-serif;*/
+    font-size: 12px;
+    height: 32px;
+    padding: 5px 40px 5px 40px;
+    /*border: 2px solid  #666d89*/
+}
 
 .container_contact {
     width: calc(100%/3);

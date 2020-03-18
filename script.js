@@ -1,24 +1,29 @@
-let itemMenu = document.querySelector("body > header > nav > ul");
-let btnNav = document.querySelector("body > main > section.portfolio > .container_button");
+const itemMenu = document.querySelector("body > header > nav > ul");
+const btnNav = document.querySelector("body > main > section.portfolio > .container_button");
 let Picture = document.querySelector("body > main > section.portfolio > .container_portfolio");
-//document.querySelector("body > main > section.portfolio > div")
+const form = document.forms[0];
+
+const Ok_button = document.getElementById ("Ok_button");
+const elmName = document.getElementById('client_name');
+const elmMail = document.getElementById('client_mail');
+let resultValueSubject = '';
+let resultValueDetails = '';
+
 let step = 0;
 
 
+// click - change active links of header
 const selectItem = (event) => {
-    step++;
-    
-    // click - change active links of header
+
     if (/*event.target.closest('li').classList[0] != 'active_li' & */event.target.tagName === 'A') {
         document.querySelectorAll('li').forEach(li => li.classList.remove('active_li'));
         event.target.closest('li').classList.add('active_li');         
     }    
 }
 
-const selectButton = (event) => {
-    step++;
-    // click - change the active portfolio button and image rotation position
-    
+// click - change the active portfolio button and image rotation position
+const selectButton = (event) => { 
+
    if (event.target.classList[1] != 'button_active' & event.target.tagName === 'BUTTON') {
         document.querySelectorAll('.container_button>button').forEach(button => button.classList.remove('button_active'));
         event.target.classList.add('button_active');
@@ -27,6 +32,7 @@ const selectButton = (event) => {
     }
 }
 
+// click - active image
 const activePicture = (event) => {        
     if (event.target.tagName === 'IMG'){
         document.querySelectorAll('.container_portfolio>img').forEach(img => img.classList.remove('img_active'));
@@ -34,10 +40,74 @@ const activePicture = (event) => {
     };    
 }
 
-   
+//submit form and generation message window
+const messageWindowForm = (event) => {
+    step++;
+    event.preventDefault();
+    
+    const elmSubject = document.getElementById('client_subject');
+    const elmDetails = document.getElementById('client_details');
+
+    const atrElmName = elmName.getAttribute('')
+    
+    let valueSubject = elmSubject.value.toString();
+    let valueDetails = elmDetails.value.toString();
+    
+    
+
+    if(valueSubject === ''){
+        resultValueSubject = 'No subject';
+    } else {
+        resultValueSubject = `Subject: ${valueSubject}`;
+    };
+
+    if(valueDetails === ''){
+        resultValueDetails = 'No description';
+    } else {
+        resultValueDetails = `Description: ${valueDetails}`;
+    };
+
+    document.getElementById('subject_text').innerText = resultValueSubject;
+    document.getElementById('details_text').innerText = resultValueDetails;
+
+     
+    if (document.getElementById('message_box').classList[0]!='hidden'){
+        document.getElementById('message_box').classList.add('hidden');
+        elmName.setAttribute("required", '');
+        elmMail.setAttribute("required", '');
+    } else {        
+        elmName.removeAttribute("required");
+        elmMail.removeAttribute("required");
+
+        elmName.value = elmName.defaultValue;
+        elmMail.value = elmMail.defaultValue;        
+        document.getElementById('client_subject').value = document.getElementById('client_subject').defaultValue;
+        document.getElementById('client_details').value = document.getElementById('client_details').defaultValue;
+        
+        document.getElementById('message_box').classList.remove('hidden');
+           
+    };    
+}
+
+/*
+если окно не в форме
+const hiddenMessageWindow =(event) =>{
+
+    document.getElementById('message_box').classList.add('hidden');
+
+    elmName.value = elmName.defaultValue;
+    elmMail.value = elmMail.defaultValue;        
+    document.getElementById('client_subject').value = document.getElementById('client_subject').defaultValue;
+    document.getElementById('client_details').value = document.getElementById('client_details').defaultValue;
+   };  
+   Ok_button.addEventListener('click', hiddenMessageWindow);
+   */
+
 itemMenu.addEventListener('click', selectItem);
 btnNav.addEventListener('click', selectButton);
 Picture.addEventListener('click', activePicture);
+form.addEventListener('submit', messageWindowForm);
+
 
 
 

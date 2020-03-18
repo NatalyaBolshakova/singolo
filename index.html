@@ -213,11 +213,19 @@
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="container">
                 <form action="#" method="post" class="container">
-                    <input class="container_form_element" type="text" id="client_name" name="name" placeholder="Name (Required)" required pattern="[A-Z][A-Za-z]+">
-                    <input class="container_form_element" type="email" id="client_mail" name="mail" placeholder="Email (Required)" required>
-                    <input class="container_form_element" type="text" id="client_subject" name="subject" placeholder="Subject">
-                    <textarea class="container_form_element form_textarea" name="details" id="client_details" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+                    <input class="container_form_element" type="text" id="client_name" name="name" placeholder="Name (Required)" required pattern="^[A-ZА-Я][A-Za-zА-Яа-я\s]+$" minlength = "6" maxlength = "30">
+                    <input class="container_form_element" type="email" id="client_mail" name="mail" placeholder="Email (Required)" required maxlength = "40">
+                    <input class="container_form_element" type="text" id="client_subject" name="subject" placeholder="Subject" maxlength = "45">
+                    <textarea class="container_form_element form_textarea" name="details" id="client_details" maxlength = "500" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
                     <input class="container_form_element" type="submit" id="bottom_submit" name="submit" value="Submit">
+                    <div id = "message_box" class= "hidden">
+                        <div id = "message">
+                            <p>The letter was sent</p><br>
+                            <p id = "subject_text"></p><br>
+                            <p id = "details_text"></p><br>
+                            <button id="Ok_button">OK</button>
+                        </div>
+                    </div>
                 </form>
                 <div class="container container_contact">
                     <h3>Contact Information</h3>

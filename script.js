@@ -3,17 +3,112 @@ const btnNav = document.querySelector("body > main > section.portfolio > .contai
 let Picture = document.querySelector("body > main > section.portfolio > .container_portfolio");
 const form = document.forms[0];
 
-//const Ok_button = document.getElementById ("Ok_button");
+
 const elmName = document.getElementById('client_name');
 const elmMail = document.getElementById('client_mail');
 let resultValueSubject = '';
 let resultValueDetails = '';
 
+//переменные для slider
+const slider = document.querySelectorAll('.slider');
+const btnLeft = document.querySelector(".switch-left");
+const btnRight = document.querySelector(".switch-right");
+
+
+let counter = 0;
+let counter1 = 0;
+let counter2 = 0;
 let step = 0;
-const slider = document.querySelector("body > main > div")
+
+//slider switchRight
+const switchRight = (event) => {
+    if (slider[0].style.left === '0%' || slider[0].style.left === '') {
+        counter = 0;
+        
+        let intervalRight = setInterval(function(){
+        counter -= 1;
+        document.querySelectorAll('.slider').forEach((item) => {
+            
+        
+            if (item.style.left === '-100%'){
+                clearInterval(intervalRight);
+                return;
+            }            
+            item.style.left = `${counter}%`;
+           
+
+            })
+        }, 10);
+        
+    } else {
+        
+            counter1 = 100;
+            counter2 = -100;
+            intervalRight = setInterval(function(){
+                counter1 -= 1;
+                counter2 -= 1;
+
+                document.querySelectorAll('.slider').forEach((item) => {
+                     
+                    if (slider[0].style.left === '0%' & slider[1].style.left === '-200%'){
+                        clearInterval(intervalRight);
+                        return;
+                    }
+                    slider[0].style.left = `${counter1}%`;
+                    slider[1].style.left = `${counter2}%`;
+                                            
+                    })
+                }, 10);
+        
+    };    
+}
+
+//slider switchLeft
+const switchLeft = (event) => {
+    if (slider[0].style.left === '0%' || slider[0].style.left === '') {
+        slider[1].style.left = '-200%'
+        counter1 = 0;
+        counter2 = -200;
+        
+        let intervalLeft = setInterval(function(){
+        counter1 += 1;
+        counter2 += 1;
+        document.querySelectorAll('.slider').forEach((item) => {
+        
+            if (slider[0].style.left === '100%' & slider[1].style.left === '-100%'){
+                clearInterval(intervalLeft);
+                return;
+            }
+            
+            slider[0].style.left = `${counter1}%`;
+            slider[1].style.left = `${counter2}%`;           
+
+            })
+        }, 10);
+        
+    } else {        
+            counter = -100;
+
+            intervalLeft = setInterval(function(){
+                counter += 1;
+                document.querySelectorAll('.slider').forEach((item) => {
+                    
+                    if (item.style.left === '0%'){
+                        clearInterval(intervalLeft);
+                        return;
+                    }
+                    item.style.left = `${counter}%`;
+                })
+            }, 10);
+        
+    };   
+}
+
+btnLeft.addEventListener('click', switchLeft);
+btnRight.addEventListener('click', switchRight);
 
 //slider without click button
-let counter = 0;
+/*let counter = 0;
 let interval_left = setInterval(function(){
     counter -= 10;
     document.querySelectorAll('.slider').forEach((item) => {
@@ -27,22 +122,7 @@ let interval_left = setInterval(function(){
         item.style.left = `${counter}px`;
 
         })
-    }, 50);
-
-    //slider.addEventListener('click')
-
-/*let interval_right = setInterval(function(){
-    document.querySelectorAll('.item').forEach((item) => {
-        counter += 1;
-        item.style.left = `${counter}px`;
-        if (item.style.left === '0px'){
-            clearInterval(interval_right);
-            return;
-        }
-            
-        })
-    }, 100);*/
-
+    }, 10);*/
 
 // click - change active links of header
 const selectItem = (event) => {
@@ -133,33 +213,19 @@ const hiddenMessageWindow =(event) =>{
     document.getElementById('client_details').value = document.getElementById('client_details').defaultValue;
    };  
    Ok_button.addEventListener('click', hiddenMessageWindow);
-   */
+*/
 
 itemMenu.addEventListener('click', selectItem);
 btnNav.addEventListener('click', selectButton);
 Picture.addEventListener('click', activePicture);
 form.addEventListener('submit', messageWindowForm);
 
-
-
-
-/*const linkHash = (event) =>{
+/*
     step++;
     console.log(`step ${step}`, event.target);
     console.log(`step ${step}`, event.currentTarget);
    console.log(`step ${step}`, event.target.parentElement);
    console.log(`step ${step}`, event.currentTarget.parentElement);
    console.log(event.target.children[0]);
-   if (event.target === 'li'){        
-       //console.log(hash);
-      //event.target.children[0].linkHash();
-      //addEventListener('click', (=> )); 
-
-       //console.log(document.querySelector(event.target.children[0]).hash);
-}
-}*/
-
-//itemMenu.addEventListener('click', linkHash);
-
-
-
+   
+*/

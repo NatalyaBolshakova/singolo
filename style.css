@@ -148,7 +148,8 @@ a {
     height: inherit;
     width: 960px;
     padding: 0px 30px;
-    justify-content: space-between;  
+    justify-content: space-between;
+    pointer-events: none; 
 }
 
 
@@ -173,21 +174,25 @@ a {
 .container_screen_VR {
     position: absolute;
     left: 20px;
-    top: 62px;     
+    top: 62px;
+    pointer-events: none;   
  }
 
 .container_screen_HR {
     position: absolute;
     left: 56px;
     top: 11px;
+    pointer-events: none;
 }
 
  #ScreenVB {    
-   /*display: none;*/
+   display: none;
+  
  }
 
  #ScreenHB{    
-    /*display: none;*/    
+    display: none;
+       
  }
 
 .button_img {
@@ -196,6 +201,7 @@ a {
     color: inherit;
     background-color: transparent;
     outline: none;
+    pointer-events: all;
 }
 
 .button_img:hover,

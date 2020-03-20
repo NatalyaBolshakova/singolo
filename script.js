@@ -292,6 +292,32 @@ let interval_left = setInterval(function(){
         })
     }, 10);*/
 
+// change screen
+const phoneVertical = document.querySelector("#home > div > div.section1.container.section1_slider.slider > div.phone_slider.phone_vertical > img");
+const phoneHorizontal = document.querySelector("#home > div > div.section1.container.section1_slider.slider > div.phone_slider.phone_horizontal > img");
+
+const screenBlack = (event) => {
+           
+   if (event.target === phoneVertical & (document.getElementById('ScreenVB').style.display === 'none' || document.getElementById('ScreenVB').style.display === '')) {
+        document.getElementById('ScreenVB').style.display = 'unset';
+   } else { 
+        if (event.target === phoneVertical & document.getElementById('ScreenVB').style.display != 'none'){
+            document.getElementById('ScreenVB').style.display = 'none';
+        }
+   };
+
+   if (event.target === phoneHorizontal & (document.getElementById('ScreenHB').style.display === 'none' || document.getElementById('ScreenHB').style.display === '')) {
+           document.getElementById('ScreenHB').style.display = 'unset';
+    } else { 
+        if (event.target === phoneHorizontal & document.getElementById('ScreenHB').style.display != 'none'){
+            document.getElementById('ScreenHB').style.display = 'none';
+        }
+    }; 
+}
+
+phoneVertical.addEventListener('click', screenBlack);
+phoneHorizontal.addEventListener('click', screenBlack);
+
 // click - change the active portfolio button and image rotation position
 const selectButton = (event) => { 
 

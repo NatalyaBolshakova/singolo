@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="font-face.css">
     <link rel="stylesheet" href="style.css">    
 </head>
-<body>
+<body>    
     <header class="header">
-            <h1>singolo<span class="color-primary">*</span></h1>
+        <h1>singolo<span class="color-primary">*</span></h1>
             <nav class="topnav">
                 <ul>
                     <li>
-                        <a href="#home">home</a>
+                        <a href="#home" class= "active_li">home</a>
                     </li>
                     <li>
                         <a href="#services">services</a>                
@@ -30,29 +30,42 @@
                 </ul>
             </nav>       
     </header>
+    <!--<hr id="home" class ="hr_header">-->
     <main>
-        <section class="section1 section1_slider">
-            <div class=" container slider_container">
-                <div class="switch-left">
-                    <nav class="button_img">               
-                        <a href="#"><img src="assets/img/chev 2.svg" alt="switch-left"></a>            
-                    </nav>
-                </div>
-                <div class="phone_vertical">
+        <section id="home">
+            <div class="container_section1">
+            <div class="section1 container section1_slider slider">                
+                <div class="phone_slider phone_vertical">
                     <img src="assets/img/iPhone Vertical.png" alt="phone1">
+                    <div class="container_screen_VR">
+                        <img id = "ScreenVB" src="assets/img/Screenvertic.svg" alt="ScreenVB">
+                    </div>
                 </div>
-                <div class="phone_horizontal">
+                <div class="phone_slider phone_horizontal">
                     <img src="assets/img/iPhone Horizontal.png" alt="phone2">
-                </div>
-                <div class="switch-right">
-                    <nav class="button_img">
-                        <a href="#"><img src="assets/img/chev.svg" alt="switch-right"></a>                        
-                    </nav>
-                </div>                
+                    <div class="container_screen_HR">
+
+                        <img id = "ScreenHB" src="assets/img/Screenhorz.svg" alt="ScreenHB">
+                    </div>
+                </div>                    
             </div>            
-        </section>
-        <section class="section2 section2_services">
-            <h2 id="services">Our Services</h2>
+            <div class ="section1_slider2 slider"></div>            
+            <div class="container container_switchbutton">
+                <button class="switch-left button_img">
+                                  
+                        <img src="assets/img/arrow-left.svg" alt="switch-left">           
+                    
+                </button>
+                <button class="switch-right button_img">
+                    
+                        <img src="assets/img/arrow-right.svg" alt="switch-right">                        
+                    
+                </button>           
+            </div>
+        </div>
+        </section>        
+        <section id="services" class="section2 section2_services">
+            <h2 >Our Services</h2>
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
                  non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                  Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -100,15 +113,15 @@
                     <p class ="text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
                 </div>
             </div>         
-        </section>
-        <section class="portfolio">
-            <h2 id="portfolio">Portfolio</h2>
+        </section>        
+        <section id="portfolio" class="portfolio">
+            <h2>Portfolio</h2>
             <p class="introduction introduction_portfolio">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
             <nav class="container_button">
-                <button class="button_all">All</button>
-                <button class="button_web">Web Design</button>
-                <button class="button_graphic">Graphic Design</button>
-                <button class="button_graphic">Artwork</button>
+                <button class="button button_all button_active">All</button>
+                <button class="button button_web">Web Design</button>
+                <button class="button button_graphic">Graphic Design</button>
+                <button class="button button_graphic">Artwork</button>
             </nav>
             <div class="container container_portfolio">
                 <img src="assets/img/image1.png" alt="image1">
@@ -128,9 +141,9 @@
                 <img src="assets/img/image12.png" alt="image15.png">
                 <img src="assets/img/image12.png" alt="image16.png">
             </div>                
-        </section>
-        <section class="section2 section2_staff">
-            <h2 id="about">About Us</h2>
+        </section>        
+        <section id="about" class="section2 section2_staff">
+            <h2>About Us</h2>
             <p class="introduction introduction_staff">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
                 Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus,
                 tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -202,17 +215,25 @@
                     </div>
                 </div>
             </div>                        
-        </section>
-        <section class="section1 section1_contact">
-            <h2 id="contact">Get a Quote</h2>
+        </section>        
+        <section id="contact" class="section1 section1_contact">
+            <h2>Get a Quote</h2>
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="container">
                 <form action="#" method="post" class="container">
-                    <input class="container_form_element" type="text" id="client_name" name="name" placeholder="Name (Required)" required pattern="[A-Z][A-Za-z]+">
-                    <input class="container_form_element" type="email" id="client_mail" name="mail" placeholder="Email (Required)" required>
-                    <input class="container_form_element" type="text" id="client_subject" name="subject" placeholder="Subject">
-                    <textarea class="container_form_element form_textarea" name="details" id="client_details" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+                    <input class="container_form_element" type="text" id="client_name" name="name" placeholder="Name (Required)" required pattern="^[A-ZА-Я][A-Za-zА-Яа-я\s]+$" minlength = "6" maxlength = "30">
+                    <input class="container_form_element" type="email" id="client_mail" name="mail" placeholder="Email (Required)" required maxlength = "40">
+                    <input class="container_form_element" type="text" id="client_subject" name="subject" placeholder="Subject" maxlength = "45">
+                    <textarea class="container_form_element form_textarea" name="details" id="client_details" maxlength = "500" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
                     <input class="container_form_element" type="submit" id="bottom_submit" name="submit" value="Submit">
+                    <div id = "message_box" class= "hidden">
+                        <div id = "message">
+                            <p>The letter was sent</p><br>
+                            <p id = "subject_text"></p><br>
+                            <p id = "details_text"></p><br>
+                            <button class = "button" id="Ok_button">OK</button>
+                        </div>
+                    </div>
                 </form>
                 <div class="container container_contact">
                     <h3>Contact Information</h3>
@@ -233,7 +254,7 @@
                     </div>
                 </div>               
             </div>            
-        </section>        
+        </section>              
     </main>
     <footer>
         <div class="container container_footer">
@@ -251,8 +272,9 @@
                 <div class="media_round round_linkedin" >
                     <a href="#"><img class="linkedin" src="assets/img/linkedin.svg" alt="linkedin" width="14"></a>
                 </div>
-        </div>
-</div>                    
+            </div>
+        </div>                    
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

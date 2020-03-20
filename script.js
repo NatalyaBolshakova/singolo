@@ -21,14 +21,14 @@ let counter2 = 0;
 let step = 0;
 
 //slider switchRight
+/*! сделать блокировку кнопок , иначе уходит в бесконечность или обработать бесконечность*/
 const switchRight = (event) => {
     if (slider[0].style.left === '0%' || slider[0].style.left === '') {
         counter = 0;
         
         let intervalRight = setInterval(function(){
         counter -= 1;
-        document.querySelectorAll('.slider').forEach((item) => {
-            
+        slider.forEach((item) => {         
         
             if (item.style.left === '-100%'){
                 clearInterval(intervalRight);
@@ -42,26 +42,27 @@ const switchRight = (event) => {
         
     } else {
         
-            counter1 = 100;
-            counter2 = -100;
-            intervalRight = setInterval(function(){
-                counter1 -= 1;
-                counter2 -= 1;
+        counter1 = 100;
+        counter2 = -100;
+        intervalRight = setInterval(function(){
+            counter1 -= 1;
+            counter2 -= 1;
 
-                document.querySelectorAll('.slider').forEach((item) => {
+            slider.forEach((item) => {
                      
-                    if (slider[0].style.left === '0%' & slider[1].style.left === '-200%'){
-                        clearInterval(intervalRight);
-                        return;
-                    }
-                    slider[0].style.left = `${counter1}%`;
-                    slider[1].style.left = `${counter2}%`;
+                if (slider[0].style.left === '0%' & slider[1].style.left === '-200%'){
+                    clearInterval(intervalRight);
+                    return;
+                }
+                slider[0].style.left = `${counter1}%`;
+                slider[1].style.left = `${counter2}%`;
                                             
-                    })
-                }, 10);
+            })
+        }, 10);
         
     };    
 }
+
 
 //slider switchLeft
 const switchLeft = (event) => {
@@ -73,7 +74,7 @@ const switchLeft = (event) => {
         let intervalLeft = setInterval(function(){
         counter1 += 1;
         counter2 += 1;
-        document.querySelectorAll('.slider').forEach((item) => {
+        slider.forEach((item) => {
         
             if (slider[0].style.left === '100%' & slider[1].style.left === '-100%'){
                 clearInterval(intervalLeft);
@@ -87,22 +88,124 @@ const switchLeft = (event) => {
         }, 10);
         
     } else {        
-            counter = -100;
+        counter = -100;
 
-            intervalLeft = setInterval(function(){
-                counter += 1;
-                document.querySelectorAll('.slider').forEach((item) => {
+        intervalLeft = setInterval(function(){
+            counter += 1;
+            slider.forEach((item) => {
                     
-                    if (item.style.left === '0%'){
-                        clearInterval(intervalLeft);
-                        return;
-                    }
-                    item.style.left = `${counter}%`;
-                })
-            }, 10);
+                if (item.style.left === '0%'){
+                    clearInterval(intervalLeft);
+                    return;
+                }
+                item.style.left = `${counter}%`;
+            })
+        }, 10);
         
     };   
 }
+/* Не мой код
+let switchLock = 0;
+let switchTransition = 'left 1.2s ease 0.1s';
+let switchLockMs = 1500;
+//slider switchRight
+const switchRight = (event) => {
+
+    function doSwitch() { 
+        if (slider[0].style.left === '') {
+            slider[0].style.transition = switchTransition;
+            slider[1].style.transition = switchTransition;
+            slider[0].style.left = `0%`;
+            slider[1].style.left = `-200%`;
+        };
+        if (slider[0].style.left === '0%') {
+            slider[1].style.transition = '';
+            slider[1].style.left = `0%`;
+            let intervalLeft = setInterval(function(){
+                clearInterval(intervalLeft);
+                slider[1].style.transition = switchTransition;
+                slider[0].style.left = `-100%`;
+                slider[1].style.left = `-100%`;
+              }, 10);
+        } else {
+            slider[0].style.transition = '';
+            slider[0].style.left = `100%`;
+            let intervalLeft = setInterval(function(){
+                clearInterval(intervalLeft);
+                slider[0].style.transition = switchTransition;
+                slider[0].style.left = `0%`;
+                slider[1].style.left = `-200%`;            
+              }, 10);
+        };
+    };
+
+    if (switchLock > 0) {
+        if (switchLock < 2) {
+            switchLock++;        
+        }    
+    } else {
+        switchLock = 1;
+        doSwitch();        
+        let intervalLock = setInterval(function(){
+            switchLock--;
+            if (switchLock > 0) { 
+                doSwitch();
+            } else {    
+                clearInterval(intervalLock); 
+            }
+        },  switchLockMs);
+    }
+}
+
+//slider switchLeft
+const switchLeft = (event) => {
+    
+    function doSwitch() { 
+        if (slider[0].style.left === '') {
+            slider[0].style.transition = switchTransition;
+            slider[1].style.transition = switchTransition;
+            slider[0].style.left = `0%`;
+            slider[1].style.left = `0%`;
+        };
+        if (slider[0].style.left === '0%') {
+            slider[1].style.transition = '';
+            slider[1].style.left = `-200%`;
+            let intervalLeft = setInterval(function(){
+                clearInterval(intervalLeft);
+                slider[1].style.transition = switchTransition;
+                slider[0].style.left = `100%`;
+                slider[1].style.left = `-100%`;
+            }, 10);
+        } else {
+            slider[0].style.transition = '';
+            slider[0].style.left = `-100%`;
+            let intervalLeft = setInterval(function(){
+                clearInterval(intervalLeft);
+                slider[0].style.transition = switchTransition;
+                slider[0].style.left = `0%`;
+                slider[1].style.left = `0%`;            
+              }, 10);
+        };    
+    };
+
+    if (switchLock > 0) {
+        if (switchLock < 2) {
+            switchLock++;        
+        }    
+    } else {
+        switchLock = 1;
+        doSwitch();        
+        let intervalLock = setInterval(function(){
+            switchLock--;
+            if (switchLock > 0) { 
+                doSwitch();
+            } else {    
+                clearInterval(intervalLock); 
+            }
+        }, switchLockMs);
+    }
+}
+*/
 
 btnLeft.addEventListener('click', switchLeft);
 btnRight.addEventListener('click', switchRight);

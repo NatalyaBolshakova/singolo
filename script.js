@@ -1,4 +1,5 @@
-const itemMenu = document.querySelector("body > header > nav > ul");
+//const itemMenu = document.querySelector("body > header > nav > ul");
+const itemMenu = document.querySelectorAll(".topnav a");
 const btnNav = document.querySelector("body > main > section.portfolio > .container_button");
 let Picture = document.querySelector("body > main > section.portfolio > .container_portfolio");
 const form = document.forms[0];
@@ -19,6 +20,70 @@ let counter = 0;
 let counter1 = 0;
 let counter2 = 0;
 let step = 0;
+
+//scroll-menu
+const scrollMenu = (event)=> {
+    
+    const curPointScroll = window.scrollY;
+    const bodyHeightScr = document.querySelector('body').scrollHeight;
+    const footerHeight =document.querySelector("body > footer").clientHeight;
+    const sectionAll = document.querySelectorAll('main > section');
+         
+    document.querySelectorAll('main > section').forEach((section) => {         
+        if ((section.offsetTop-95)<= curPointScroll & ((section.offsetTop-95) + section.offsetHeight) > curPointScroll) {
+                        
+            itemMenu.forEach(a => {
+                a.classList.remove('active_li');
+                if (section.getAttribute('id') === a.getAttribute('href').substring(1)){
+                    a.classList.add('active_li');
+                }
+                
+            });    
+        } else {
+            itemMenu.forEach(a => {
+                
+                if ((bodyHeightScr - footerHeight - sectionAll[sectionAll.length-1].clientHeight- sectionAll[sectionAll.length-2].clientHeight/3) < curPointScroll ){
+                    /*console.log(bodyHeightScr - footerHeight - sectionAll[sectionAll.length-1].clientHeight- sectionAll[sectionAll.length-2].clientHeight/3);
+                    console.log(curPointScroll); */ 
+                    a.classList.remove('active_li');
+                    itemMenu[itemMenu.length-1].classList.add('active_li');
+                 } 
+            });
+        }
+    });
+ }
+
+
+/*
+const scrollMenu = (event)=> {
+  
+document.querySelectorAll('main > section').forEach((section) => {
+    const curPointScroll = window.scrollY;       
+        if ((section.offsetTop-95)<= curPointScroll & ((section.offsetTop-95) + section.offsetHeight) > curPointScroll) {
+            document.querySelectorAll(".topnav a").forEach(a => {
+                a.classList.remove('active_li');
+                if (section.getAttribute('id') === a.getAttribute('href').substring(1)){
+                    a.classList.add('active_li');
+                }
+                
+            });
+        };  
+    });
+};*/
+
+document.addEventListener('scroll', scrollMenu);
+
+// click - change active links of header
+
+/*const selectItem = (event) => {
+
+    if (/*event.target.closest('li').classList[0] != 'active_li' & //event.target.tagName === 'A') {
+        document.querySelectorAll('li').forEach(li => li.classList.remove('active_li'));
+        event.target.closest('li').classList.add('active_li');         
+    }    
+}
+
+itemMenu.addEventListener('click', selectItem);*/
 
 //slider switchRight
 /*! сделать блокировку кнопок , иначе уходит в бесконечность или обработать бесконечность*/
@@ -227,15 +292,6 @@ let interval_left = setInterval(function(){
         })
     }, 10);*/
 
-// click - change active links of header
-const selectItem = (event) => {
-
-    if (/*event.target.closest('li').classList[0] != 'active_li' & */event.target.tagName === 'A') {
-        document.querySelectorAll('li').forEach(li => li.classList.remove('active_li'));
-        event.target.closest('li').classList.add('active_li');         
-    }    
-}
-
 // click - change the active portfolio button and image rotation position
 const selectButton = (event) => { 
 
@@ -263,7 +319,7 @@ const messageWindowForm = (event) => {
     const elmSubject = document.getElementById('client_subject');
     const elmDetails = document.getElementById('client_details');
 
-    const atrElmName = elmName.getAttribute('')
+    //const atrElmName = elmName.getAttribute('')
     
     let valueSubject = elmSubject.value.toString();
     let valueDetails = elmDetails.value.toString();
@@ -318,7 +374,7 @@ const hiddenMessageWindow =(event) =>{
    Ok_button.addEventListener('click', hiddenMessageWindow);
 */
 
-itemMenu.addEventListener('click', selectItem);
+//itemMenu.addEventListener('click', selectItem);
 btnNav.addEventListener('click', selectButton);
 Picture.addEventListener('click', activePicture);
 form.addEventListener('submit', messageWindowForm);

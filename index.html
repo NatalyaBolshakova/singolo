@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="style.css">    
 </head>
 <body>    
-    <header class="header" id="home">
+    <header class="header">
         <h1>singolo<span class="color-primary">*</span></h1>
             <nav class="topnav">
                 <ul>
-                    <li class= "active_li">
-                        <a href="#home">home</a>
+                    <li>
+                        <a href="#home" class= "active_li">home</a>
                     </li>
                     <li>
                         <a href="#services">services</a>                
@@ -32,8 +32,9 @@
     </header>
     <!--<hr id="home" class ="hr_header">-->
     <main>
-        <div class="container_section1">
-            <section class="section1 container section1_slider slider">                
+        <section id="home">
+            <div class="container_section1">
+            <div class="section1 container section1_slider slider">                
                 <div class="phone_vertical">
                     <img src="assets/img/iPhone Vertical.png" alt="phone1">
                     <div class="container_screen_VR">
@@ -47,17 +48,8 @@
                         <img id = "ScreenHB" src="assets/img/Screenhorz.svg" alt="ScreenHB">
                     </div>
                 </div>                    
-            </section>            
-            <section class ="section1_slider2 slider"></section>
-            <!--<div class="container_screen">
-                <div class="container_screen_VR">
-                    <img id = "ScreenVB" src="assets/img/Screenvertic.svg" alt="ScreenVB">
-                </div>
-                <div class="container_screen_HR">
-
-                    <img id = "ScreenHB" src="assets/img/Screenhorz.svg" alt="ScreenHB">
-                </div>
-            </div>-->
+            </div>            
+            <div class ="section1_slider2 slider"></div>            
             <div class="container container_switchbutton">
                 <button class="switch-left button_img">
                                   
@@ -71,7 +63,7 @@
                 </button>           
             </div>
         </div>
-        <!--<hr id="services" class ="hr_section1">-->
+        </section>        
         <section id="services" class="section2 section2_services">
             <h2 >Our Services</h2>
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
@@ -121,8 +113,7 @@
                     <p class ="text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
                 </div>
             </div>         
-        </section>
-        <!--<hr id="portfolio" class ="hr_section2">-->
+        </section>        
         <section id="portfolio" class="portfolio">
             <h2>Portfolio</h2>
             <p class="introduction introduction_portfolio">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -150,8 +141,7 @@
                 <img src="assets/img/image12.png" alt="image15.png">
                 <img src="assets/img/image12.png" alt="image16.png">
             </div>                
-        </section>
-        <!--<hr id="about" class ="hr_header">-->
+        </section>        
         <section id="about" class="section2 section2_staff">
             <h2>About Us</h2>
             <p class="introduction introduction_staff">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
@@ -225,8 +215,7 @@
                     </div>
                 </div>
             </div>                        
-        </section>
-        <!--<hr id="contact" class ="hr_section2">-->
+        </section>        
         <section id="contact" class="section1 section1_contact">
             <h2>Get a Quote</h2>
             <p class="introduction">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -265,8 +254,7 @@
                     </div>
                 </div>               
             </div>            
-        </section>
-        <!--<hr class ="hr_section1">  -->      
+        </section>              
     </main>
     <footer>
         <div class="container container_footer">

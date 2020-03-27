@@ -213,9 +213,7 @@ a {
 }
 
 .section1_contact {
-    height: 648px;
-    width: 960px;
-    padding: 0px 30px;
+    padding: 0px 30px 40px 30px;
     scroll-margin-top: 95px;   
 }
 
@@ -226,22 +224,16 @@ a {
 
 }
 
-.section2_services {
-    height: 494px;
-    width: 960px;
-    padding: 0px 30px;
+.section2_services {    
+    padding: 0px 30px 28px 30px;
 }
 
-.section2_staff {
-    height: 728px;
-    width: 960px;
-    padding: 0px 30px;
+.section2_staff {    
+    padding: 0px 30px 67px 30px;;
 }
 
-.portfolio {
-    height: 863px;
-    width: 960px;
-    padding: 0px 30px 0px 30px;
+.portfolio {   
+    padding: 0px 30px 58px 30px;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
     scroll-margin-top: 95px;
@@ -263,10 +255,8 @@ h2 {
 }
 
 .introduction {
-    margin: 0px;
-    width: 940px;
-    height: 57px;
-    padding: 25px 10px 48px 10px;
+    margin: 0px;    
+    padding: 25px 10px 45px 10px;
     font-size: 18px;
     line-height: 30px;
     font-weight: 300;
@@ -277,12 +267,12 @@ h2 {
 
 .section1_contact>.introduction {
     color: #f0d8d9;
-    padding-bottom: 47px;
+    padding-bottom: 44px;
 }
 
 h3 {
-    margin: 0px;
-    padding-bottom: 10px;
+    margin: 0px;    
+    padding: 3px 0px 10px 0px;
     font-size: 18px;
     font-family: "Lato Black", "Open Sans", sans-serif;
     line-height: 18px;    
@@ -295,11 +285,15 @@ p {
     margin: 0px;
 }
 
-.icon {
-    width: 60px;
-    height: 123px;
+.container_service {
+    flex-wrap: nowrap;
+    width: calc(100%/3);
+}
+
+.icon {    
     padding: 0px 10px 0px 10px;
     text-align: center;
+    align-self: flex-start;
 }
 
 .icon_img {
@@ -346,10 +340,9 @@ p {
 }
 
 .service_text {
-    margin: 0px;    
-    width: 219px;
-    height: 123px;
-    padding: 0px 10px 0px 10px;
+    margin: 0px;     
+    padding: 0px 10px 3px 10px;
+
 }
 
 .text {
@@ -367,23 +360,29 @@ p {
     width: 12px;
 }
 
-.introduction_portfolio {    
-    height: 30px;
-    padding: 25px 10px 0px 10px;
+.introduction_portfolio {     
+    padding: 25px 10px 1px 10px;
 }
 
 .introduction_staff {
-    padding: 25px 10px 46px 10px; 
+    padding: 25px 10px 42px 10px; 
 }
 
 .container_button {
     display: inline-flex;    
 }
 
-.container_portfolio {
-    height: 621px;
-    margin-top: 9px;    
+.container_portfolio {    
+    margin-top: 8px;    
 }
+
+.container_portfolio>img {
+    flex-shrink: 1;
+    width: calc((100% - 80px)/4);
+    height: auto;
+    margin: 10px;
+}
+
 
 .container_portfolio>img:nth-child(n+13) {
     display: none;    
@@ -427,19 +426,29 @@ p {
     border: 1px solid #c5c5c5;
 }
 
-.img_active {
+.container_portfolio>.img_active {
     border: 5px solid #F06C64;
-    margin: -5px;
+    margin: 5px;
+}
+
+.photo_staff {
+    width: calc(100%/3 - 16px);
 }
 
 
-#photo1 {
+.container_staff>div>img {
+    flex-shrink: 1;
+    width: 100%;
+    height: auto;   
+}
+
+/*#photo1 {
     padding-left: 1px;
 }
 
 #photo2 {
     padding-right: 1px;
-}
+}*/
 
 
 .item_staff {
@@ -539,7 +548,7 @@ form {
 }
 
 .form_textarea {
-    height: 195px;
+    height: 152px;
     padding-top: 7px;
     resize: none;
     text-align: justify;
@@ -631,8 +640,7 @@ input:-webkit-autofill:invalid {
     background :#2d303a;
     border: 2px solid #d6564f;
     color: #767e9e;
-    text-align: left;
-   /* font-family: "Lato Bold", "Open Sans", sans-serif;*/
+    text-align: left;  
     font-size: 18px;
     line-height: 22px;
     border-radius: 5px;
@@ -719,8 +727,7 @@ input:-webkit-autofill:invalid {
     margin: 1px 10px 0px 7px;
 }
 
-.container_footer {
-    width: 960px;
+.container_footer {    
     padding: 0px 30px;
     height: 76px;
     background-color: #2d303a;
@@ -744,3 +751,129 @@ input:-webkit-autofill:invalid {
     cursor: pointer;
     background-color:#f2f2f2;                   
 }
+
+@media only screen and (max-width: 1019px) {
+    body {
+        width: 100%;
+        margin: 0;        
+    }
+    .section1_slider {
+        width: calc(100% - 60px);       
+     }
+
+     .container_switchbutton {
+        width: calc(100% - 60px);
+       
+    }
+    .section1_slider2 {
+        background-size: cover;   
+        
+    }
+
+    .section2_services>h2 {
+        padding-top: 48px;
+    }
+
+    .introduction {
+        padding-bottom: 35px;
+    }
+
+    .section2_services {
+        padding-bottom: 20px;
+    }    
+    
+
+    .container_service {        
+        width: calc(100%/3);
+        flex: 1 0 50%;
+    }
+
+    .service_text {       
+        padding: 0px 40px 22px 10px;
+    
+    }
+
+    .container_portfolio>img {        
+        width: calc((100% - 60px)/3)
+      
+    }
+
+    .introduction_portfolio {
+       
+        padding: 25px 50px 1px 10px;
+    }
+
+    .container_portfolio {
+        margin: 18px 1px -1px -1px;
+    }
+    .section2_staff {
+        padding: 0px 30px 69px 30px;
+    }
+    .section2_staff>h2 {    
+        
+        padding-top: 60px;    
+    }
+    
+    .introduction_staff {
+        padding-bottom: 38px;
+    }
+
+        #photo1 {
+        padding-left: 3px;
+    }
+
+    /*#photo2 {
+        padding-right: 1px;
+    }*/
+    .item_staff>h3 {
+        padding: 11px 10px 1px 9px;
+    }
+
+    .item_staff>.text {
+        padding: 0px 0px 0px 10px;
+        height: 63px;
+    }
+
+    .section1_contact {
+        padding: 0px 30px 32px 30px;
+    }
+
+    .section1_contact>h2 {
+        padding-top: 61px;
+    }
+
+    .section1_contact>.introduction {
+        padding: 25px 25px 25px 10px;
+    }
+
+    .container_form_element {
+        margin: 0px 20px 12px 10px;
+    }
+    .container_contact>h3 {
+        margin: 0 9px;
+        padding: 1px 0px 2px 0px;
+    }
+    .container_contact>.text {       
+        margin: 0 10px 9px 10px;        
+        height: auto;
+    }
+    .contact {
+        margin: 0 8px;
+    }
+}
+
+
+/* @media only screen and (max-width: 800px) {    
+      
+    .container_service {
+        flex-wrap: nowrap;
+       width: calc(100%/3);
+        flex: 1 0 50%;    
+    }
+
+    .service_text {       
+        padding: 0px 40px 25px 10px
+    
+    }
+}
+*/

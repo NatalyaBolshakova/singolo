@@ -99,8 +99,7 @@ a {
 .container_section1 {
     display: flex; 
     overflow: hidden; 
-    width: 100%;
-    height: 600px;
+    width: 100%;    
     scroll-margin-top: 96px;
     
 }
@@ -136,18 +135,23 @@ a {
     align-content: space-around;
 }
 
-.section1_slider {
-    height: 594px;
+.section1_slider {    
     width: 960px;
-    padding: 0px 30px;
+    padding: 54px 30px 52px 30px;
     justify-content: space-evenly;  
+ }
+
+ .phone_slider img {
+    flex-shrink: 1;
+    width: 100%;
+    height: auto;
  }
 
 .container_switchbutton {
     position: absolute;
     height: inherit;
     width: 960px;
-    padding: 0px 30px;
+    padding: 283px 30px;
     justify-content: space-between;
     pointer-events: none; 
 }
@@ -164,11 +168,13 @@ a {
 .phone_vertical {
     position: relative;
     padding: 0px 0px 5px 9px;
+    width: calc(100%/4);
 }
 
 .phone_horizontal {
     position: relative;
     padding: 0px 7px 6px 0px;
+    width: calc(100%/4*2);
 }
 
 .container_screen_VR {
@@ -191,8 +197,7 @@ a {
  }
 
  #ScreenHB{    
-    display: none;
-       
+    display: none;       
  }
 
 .button_img {
@@ -758,16 +763,40 @@ input:-webkit-autofill:invalid {
         margin: 0;        
     }
     .section1_slider {
-        width: calc(100% - 60px);       
+        width: calc(100% - 60px);        
+        padding: 41px 30px 40px 30px;      
      }
 
-     .container_switchbutton {
-        width: calc(100% - 60px);
-       
+     .container_screen_VR {
+        left: 8px;
+        top: 45px;    
+        width: calc(82%);
     }
+
+     .container_screen_HR {       
+        left: 41px;
+        top: 7px;        
+        width: calc(72%);
+    }
+
+     .container_switchbutton {
+        width: calc(100% - 36px);
+        padding: 212px 18px;
+    }
+       
     .section1_slider2 {
         background-size: cover;   
         
+    }
+
+    .phone_vertical {        
+        width: calc(100%/4 + 4px);
+        padding: 0px;
+    }
+
+    .phone_horizontal {        
+        width: calc(100%/4*2 + 11px);
+        padding: 0px;
     }
 
     .section2_services>h2 {
@@ -779,7 +808,7 @@ input:-webkit-autofill:invalid {
     }
 
     .section2_services {
-        padding-bottom: 20px;
+        padding-bottom: 21px;
     }    
     
 
@@ -806,9 +835,11 @@ input:-webkit-autofill:invalid {
     .container_portfolio {
         margin: 18px 1px -1px -1px;
     }
+
     .section2_staff {
         padding: 0px 30px 69px 30px;
     }
+
     .section2_staff>h2 {    
         
         padding-top: 60px;    
@@ -818,13 +849,14 @@ input:-webkit-autofill:invalid {
         padding-bottom: 38px;
     }
 
-        #photo1 {
+    #photo1 {
         padding-left: 3px;
     }
 
     /*#photo2 {
         padding-right: 1px;
     }*/
+    
     .item_staff>h3 {
         padding: 11px 10px 1px 9px;
     }

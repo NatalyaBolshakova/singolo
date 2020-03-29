@@ -77,13 +77,19 @@ const scrollMenu = (event)=> {
     }
 
 
-    if (document.documentElement.clientWidth <= 767 & document.querySelector('.topnav').classList.contains('show_menu') == true){
+    if (document.documentElement.clientWidth < 768 /*& document.querySelector('.topnav').classList.contains('show_menu') == true*/){
         document.getElementById("menu").style.transform = "rotate(0deg)";
         document.querySelector("h1").style.paddingRight = "0px";
         document.querySelector('.topnav').classList.remove('show_menu');
         document.querySelector('.topnav').style.display = "none";
         document.querySelector('.topnav').classList.add('unshow_menu');
     }
+
+    if (document.documentElement.clientWidth >= 768){
+        document.querySelector('.topnav').style.display = "unset";
+        document.querySelector('.topnav').style.boxShadow = "unset";
+    }
+    
  }
 
 
@@ -118,6 +124,7 @@ const touchBurgerMenu = (event) => {
         
     } else {
         document.getElementById("menu").style.transform = "rotate(0deg)";
+        document.querySelector('.topnav').style.boxShadow = "unset";
         document.querySelector("h1").style.paddingRight = "0px";
         document.querySelector('.topnav').classList.remove('show_menu');
         document.querySelector('.topnav').style.display = "none";

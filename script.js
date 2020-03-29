@@ -374,13 +374,14 @@ phoneVertical.addEventListener('click', screenBlack);
 phoneHorizontal.addEventListener('click', screenBlack);
 
 // click - change the active portfolio button and image rotation position
-const selectButton = (event) => { 
-
-   if (event.target.classList[1] != 'button_active' & event.target.tagName === 'BUTTON') {
+const selectButton = (event) => {     
+    const arrPicture = document.querySelectorAll('.container_portfolio>img');    
+   if (event.target.classList.contains('button_active') == false & event.target.tagName === 'BUTTON') {
         document.querySelectorAll('.container_button>button').forEach(button => button.classList.remove('button_active'));
         event.target.classList.add('button_active');
-
-        document.querySelectorAll('.container_portfolio>img').forEach(img => img.style.order = Math.floor(Math.random() * document.querySelectorAll('.container_portfolio>img').length));         
+        Picture.append(arrPicture[0]);
+        //arrPicture[arrPicture.length-1].after(arrPicture[0]);
+       // document.querySelectorAll('.container_portfolio>img').forEach(img => img.style.order = Math.floor(Math.random() * document.querySelectorAll('.container_portfolio>img').length));         
     }
 }
 

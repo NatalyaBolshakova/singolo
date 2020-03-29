@@ -636,8 +636,8 @@ input:-webkit-autofill:invalid {
 #message {
     position: absolute;
     top: 30%;
-    left: 25%;
-    width: calc(100vw/2);
+    left: 33%;
+    width: calc(100vw/4);
     height: calc(100vh/3);    
     padding: 40px;
     margin: 10px;
@@ -671,7 +671,7 @@ input:-webkit-autofill:invalid {
 
 #Ok_button {
     position: absolute; 
-    left: 80%;
+    left: 70%;
     top: 80%;        
     font-size: 12px;
     height: 32px;
@@ -893,7 +893,22 @@ input:-webkit-autofill:invalid {
         margin: 0 8px;
     }
 
-    
+    #message {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        width: calc(100vw/2);
+        height: calc(100vh/3); 
+    }
+
+    #Ok_button {
+        position: absolute; 
+        left: 80%;
+        top: 80%;        
+        font-size: 12px;
+        height: 32px;
+        padding: 5px 10px 5px 10px;    
+    }
 }
 
 
@@ -1281,6 +1296,23 @@ input:-webkit-autofill:invalid {
 
     .section2 {        
         scroll-margin-top: 70px;
+    }
+
+    #message {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: calc(100vw/2);
+        height: calc(100vh/3); 
+    }
+
+    #Ok_button {
+        position: absolute; 
+        left: 70%;
+        top: 80%;        
+        font-size: 12px;
+        height: 32px;
+        padding: 5px 10px 5px 10px;    
     }
 }
 

@@ -81,13 +81,13 @@ const scrollMenu = (event)=> {
         document.getElementById("menu").style.transform = "rotate(0deg)";
         document.querySelector("h1").style.paddingRight = "0px";
         document.querySelector('.topnav').classList.remove('show_menu');
-        document.querySelector('.topnav').style.display = "none";
+        document.querySelector('.topnav').style.display = "";
         document.querySelector('.topnav').classList.add('unshow_menu');
     }
 
     if (document.documentElement.clientWidth >= 768){
-        document.querySelector('.topnav').style.display = "unset";
-        document.querySelector('.topnav').style.boxShadow = "unset";
+        document.querySelector('.topnav').style.display = "";
+      //  document.querySelector('.topnav').style.boxShadow = "";
     }
     
  }
@@ -115,7 +115,7 @@ document.addEventListener('scroll', scrollMenu);
 const touchBurgerMenu = (event) => {    
     
     if (document.querySelector('.topnav').classList.contains('show_menu') == false ){
-        document.querySelector('.topnav').style.boxShadow = "100px -5px 40px rgba(0, 0, 0, 0.4)";
+        //document.querySelector('.topnav').style.boxShadow = "100px -5px 40px rgba(0, 0, 0, 0.4)";
         document.getElementById("menu").style.transform = "rotate(90deg)";
         document.querySelector('h1').style.paddingRight = "78px";
         document.querySelector('.topnav').classList.remove('unshow_menu');
@@ -124,10 +124,10 @@ const touchBurgerMenu = (event) => {
         
     } else {
         document.getElementById("menu").style.transform = "rotate(0deg)";
-        document.querySelector('.topnav').style.boxShadow = "unset";
+        //document.querySelector('.topnav').style.boxShadow = "";
         document.querySelector("h1").style.paddingRight = "0px";
         document.querySelector('.topnav').classList.remove('show_menu');
-        document.querySelector('.topnav').style.display = "none";
+        document.querySelector('.topnav').style.display = "";
         document.querySelector('.topnav').classList.add('unshow_menu');
     }  
     

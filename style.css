@@ -892,12 +892,14 @@ input:-webkit-autofill:invalid {
     .contact {
         margin: 0 8px;
     }
+
+    
 }
 
 
 @media only screen and (max-width: 767px) {         
       
-    h1 {        
+    h1 { 
         padding-left: 0px;        
         padding-top: 24px;
         padding-bottom: 17px;        
@@ -909,11 +911,78 @@ input:-webkit-autofill:invalid {
     #menu {
         display: inline-block;
         margin-left: 20px;
-        margin-top: 6px;
+        margin-top: 6px;       
     }
 
+    
+    .show_menu {
+        transform: translateX(0);
+        transition: transform 0.5s linear;
+    }
+
+    .unshow_menu {
+        transform: translateX(-767px);
+        transition: transform 0.5s linear;
+    }   
+
     .topnav {
-       display: none;         
+        display: none;
+        padding: 162px 0px 0px 58px;
+        font-family: "Lato Bold", "Open Sans", sans-serif;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.035em;
+        width: calc(74% - 58px);
+        height: 100vh;
+        background-color: #2d303a;
+        position: absolute;
+        left: 0;
+        top: 71px;       
+            
+        font-stretch: ultra-condensed;
+        transition: all 0.3s ease; 
+        -moz-transition: all 0.3s ease; 
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        /*width: 100%;
+        flex: 1 0 100%; */     
+     }
+
+    ul {
+        display: flex;
+        /* justify-content: space-between; */
+        margin-block-end: 6px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    li {
+        list-style-type: none;
+        padding-right: 0px;
+        padding-top: 0px;
+        letter-spacing: -0.29px;
+        margin-bottom: 28px;    
+    }
+    
+    li:before {
+        content: "";        
+        /*padding-right: 13px;*/
+    }
+    
+   li>a:hover {
+        color: #f06c64;
+        cursor: pointer;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;     
+    }
+
+    .container_section1 {           
+        scroll-margin-top: 100px;        
     }
 
     .section1_slider {
@@ -1036,6 +1105,7 @@ input:-webkit-autofill:invalid {
     }
     .portfolio {
         padding: 0px 25px 27px 25px;
+        scroll-margin-top: 70px;
     }
 
     .container_portfolio {
@@ -1132,6 +1202,7 @@ input:-webkit-autofill:invalid {
 
     .section1_contact {
         padding: 0px 30px 34px 30px;
+        scroll-margin-top: 70px;
     }
 
     form {
@@ -1202,6 +1273,14 @@ input:-webkit-autofill:invalid {
     .container_media_footer {
         padding-right: 0px;
         padding-bottom: 0px;
+    }
+
+    #home {
+        scroll-margin-top: 70px;
+    }
+
+    .section2 {        
+        scroll-margin-top: 70px;
     }
 }
 

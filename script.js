@@ -1,5 +1,6 @@
 //const itemMenu = document.querySelector("body > header > nav > ul");
 const itemMenu = document.querySelectorAll(".topnav a");
+const BurgerMenu = document.querySelector("#menu");
 const btnNav = document.querySelector("body > main > section.portfolio > .container_button");
 let Picture = document.querySelector("body > main > section.portfolio > .container_portfolio");
 const form = document.forms[0];
@@ -23,34 +24,66 @@ let step = 0;
 
 //scroll-menu
 const scrollMenu = (event)=> {
-    
     const curPointScroll = window.scrollY;
     const bodyHeightScr = document.querySelector('body').scrollHeight;
     const footerHeight =document.querySelector("body > footer").clientHeight;
     const sectionAll = document.querySelectorAll('main > section');
-         
-    document.querySelectorAll('main > section').forEach((section) => {         
-        if ((section.offsetTop-95)<= curPointScroll & ((section.offsetTop-95) + section.offsetHeight) > curPointScroll) {
-                        
-            itemMenu.forEach(a => {
-                a.classList.remove('active_li');
-                if (section.getAttribute('id') === a.getAttribute('href').substring(1)){
-                    a.classList.add('active_li');
-                }
+
+   if (document.documentElement.clientWidth > 767) {
+       document.querySelectorAll('main > section').forEach((section) => {         
+           if ((section.offsetTop-95)<= curPointScroll & ((section.offsetTop-95) + section.offsetHeight) > curPointScroll) {
                 
-            });    
-        } else {
-            itemMenu.forEach(a => {
-                
-                if ((bodyHeightScr - footerHeight - sectionAll[sectionAll.length-1].clientHeight- sectionAll[sectionAll.length-2].clientHeight/3) < curPointScroll ){
-                    /*console.log(bodyHeightScr - footerHeight - sectionAll[sectionAll.length-1].clientHeight- sectionAll[sectionAll.length-2].clientHeight/3);
-                    console.log(curPointScroll); */ 
+               itemMenu.forEach(a => {
+                   a.classList.remove('active_li');
+                   if (section.getAttribute('id') === a.getAttribute('href').substring(1)){
+                       a.classList.add('active_li');
+                   }
+                   
+               });    
+           } else {
+               itemMenu.forEach(a => {
+                   
+                   if ((bodyHeightScr - footerHeight - sectionAll[sectionAll.length-1].clientHeight- sectionAll[sectionAll.length-2].clientHeight/3) < curPointScroll ){
+                       
+                       a.classList.remove('active_li');
+                       itemMenu[itemMenu.length-1].classList.add('active_li');
+                    } 
+               });
+           }
+       });
+   }
+
+    if (document.documentElement.clientWidth <= 767) {
+        document.querySelectorAll('main > section').forEach((section) => {         
+            if ((section.offsetTop-71)<= curPointScroll & ((section.offsetTop-71) + section.offsetHeight) > curPointScroll){                
+                itemMenu.forEach(a => {
                     a.classList.remove('active_li');
-                    itemMenu[itemMenu.length-1].classList.add('active_li');
-                 } 
-            });
-        }
-    });
+                    if (section.getAttribute('id') === a.getAttribute('href').substring(1)){
+                        a.classList.add('active_li');
+                    }
+                    
+                });    
+            } else {
+                itemMenu.forEach(a => {
+                    
+                    if ((bodyHeightScr - footerHeight - sectionAll[sectionAll.length-1].clientHeight- sectionAll[sectionAll.length-2].clientHeight/3) < curPointScroll ){
+                        
+                        a.classList.remove('active_li');
+                        itemMenu[itemMenu.length-1].classList.add('active_li');
+                        } 
+                });
+            }
+        });
+    }
+
+
+    if (document.documentElement.clientWidth <= 767 & document.querySelector('.topnav').classList.contains('show_menu') == true){
+        document.getElementById("menu").style.transform = "rotate(0deg)";
+        document.querySelector("h1").style.paddingRight = "0px";
+        document.querySelector('.topnav').classList.remove('show_menu');
+        document.querySelector('.topnav').style.display = "none";
+        document.querySelector('.topnav').classList.add('unshow_menu');
+    }
  }
 
 
@@ -72,6 +105,28 @@ document.querySelectorAll('main > section').forEach((section) => {
 };*/
 
 document.addEventListener('scroll', scrollMenu);
+
+const touchBurgerMenu = (event) => {    
+    
+    if (document.querySelector('.topnav').classList.contains('show_menu') == false ){
+        document.querySelector('.topnav').style.boxShadow = "100px -5px 40px rgba(0, 0, 0, 0.4)";
+        document.getElementById("menu").style.transform = "rotate(90deg)";
+        document.querySelector('h1').style.paddingRight = "78px";
+        document.querySelector('.topnav').classList.remove('unshow_menu');
+        document.querySelector('.topnav').style.display = "unset";
+        document.querySelector('.topnav').classList.add('show_menu');
+        
+    } else {
+        document.getElementById("menu").style.transform = "rotate(0deg)";
+        document.querySelector("h1").style.paddingRight = "0px";
+        document.querySelector('.topnav').classList.remove('show_menu');
+        document.querySelector('.topnav').style.display = "none";
+        document.querySelector('.topnav').classList.add('unshow_menu');
+    }  
+    
+}
+
+BurgerMenu.addEventListener('click', touchBurgerMenu);
 
 // click - change active links of header
 
@@ -319,13 +374,14 @@ phoneVertical.addEventListener('click', screenBlack);
 phoneHorizontal.addEventListener('click', screenBlack);
 
 // click - change the active portfolio button and image rotation position
-const selectButton = (event) => { 
-
-   if (event.target.classList[1] != 'button_active' & event.target.tagName === 'BUTTON') {
+const selectButton = (event) => {     
+    const arrPicture = document.querySelectorAll('.container_portfolio>img');    
+   if (event.target.classList.contains('button_active') == false & event.target.tagName === 'BUTTON') {
         document.querySelectorAll('.container_button>button').forEach(button => button.classList.remove('button_active'));
         event.target.classList.add('button_active');
-
-        document.querySelectorAll('.container_portfolio>img').forEach(img => img.style.order = Math.floor(Math.random() * document.querySelectorAll('.container_portfolio>img').length));         
+        Picture.append(arrPicture[0]);
+        //arrPicture[arrPicture.length-1].after(arrPicture[0]);
+       // document.querySelectorAll('.container_portfolio>img').forEach(img => img.style.order = Math.floor(Math.random() * document.querySelectorAll('.container_portfolio>img').length));         
     }
 }
 
